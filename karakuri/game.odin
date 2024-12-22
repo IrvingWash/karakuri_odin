@@ -1,6 +1,6 @@
 package karakuri
 
-import "core"
+import "../core"
 
 Game :: struct {
 	title:         string,
@@ -22,6 +22,11 @@ game_new :: proc(
 
 game_start :: proc(game: Game) {
 	core.open_window(game.window_width, game.window_height, game.title, game.fullscreen)
+
+    for (!core.should_close_window()) {
+		core.start_drawing(game.renderer)
+		core.finish_drawing(game.renderer)
+    }
 }
 
 game_close :: proc(game: Game) {
