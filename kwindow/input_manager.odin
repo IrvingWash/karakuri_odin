@@ -1,4 +1,4 @@
-package core
+package kwindow
 
 import rl "vendor:raylib"
 

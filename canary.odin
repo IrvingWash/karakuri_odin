@@ -1,18 +1,11 @@
 package canary
 
-import "core"
-import "karakuri"
+import "kgame"
+import "kutils"
 
 main :: proc() {
-	my_game := karakuri.game_new(
-		title = "Canary",
-		window_width = 800,
-		window_height = 600,
-		color = core.BLACK,
-		fullscreen = false,
-	)
+    game := kgame.game_new("Canary", 800, 600, false, kutils.COLOR_BLACK, 60)
 
-    karakuri.game_start(my_game)
-
-    karakuri.game_close(my_game)
+    kgame.game_start(game)
+    kgame.game_close(game)
 }
