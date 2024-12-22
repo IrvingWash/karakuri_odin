@@ -1,4 +1,4 @@
-package math
+package kmath
 
 Vector2 :: struct {
 	x: f64,
