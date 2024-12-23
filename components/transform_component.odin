@@ -13,9 +13,5 @@ transform_component_new :: proc(
 	scale: kmath.Vector2 = kmath.Vector2{1, 1},
 	rotation: f64 = 0,
 ) -> TransformComponent {
-    return TransformComponent {
-        position,
-        scale,
-        rotation,
-    }
+	return TransformComponent{position, scale, rotation}
 }

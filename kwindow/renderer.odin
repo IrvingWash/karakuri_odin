@@ -1,5 +1,6 @@
 package kwindow
 
+import "../kmath"
 import "../kutils"
 import rl "vendor:raylib"
 
@@ -18,6 +19,21 @@ start_drawing :: proc(renderer: Renderer) {
 
 finish_drawing :: proc(renderer: Renderer) {
 	rl.EndDrawing()
+}
+
+draw_rectangle :: proc(
+	renderer: Renderer,
+	position: kmath.Vector2,
+	size: kmath.Vector2,
+	color: kutils.Color,
+) {
+	rl.DrawRectangle(
+		i32(position.x),
+		i32(position.y),
+		i32(size.x),
+		i32(size.y),
+		color_to_rl(color)
+	)
 }
 
 color_to_rl :: proc(color: kutils.Color) -> rl.Color {
