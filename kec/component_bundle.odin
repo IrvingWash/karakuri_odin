@@ -1,4 +1,4 @@
-package components
+package kec
 
 ComponentBundle :: struct {
 	transform: TransformComponent,

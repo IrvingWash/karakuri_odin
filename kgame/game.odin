@@ -3,7 +3,7 @@ package kgame
 import "../kutils"
 import "../kwindow"
 import "../scene"
-import "../components"
+import "../kec"
 
 Game :: struct {
 	title:    string,
@@ -36,7 +36,7 @@ game_close :: proc(game: Game) {
 	kwindow.close_window()
 }
 
-game_add_entity :: proc(game: ^Game, bundle: components.ComponentBundle) {
+game_add_entity :: proc(game: ^Game, bundle: kec.ComponentBundle) {
 	scene.scene_create_entity(&game.scene, bundle)
 }
 
@@ -44,11 +44,15 @@ game_add_entity :: proc(game: ^Game, bundle: components.ComponentBundle) {
 update :: proc(game: Game) {
 	dt := kwindow.get_delta_time() * 10
 
+	commands := kec.Commands{
+		kwindow.is_key_down
+	}
+
 	for &e in game.scene.entities {
 		behavior, ok := e.behavior_component.?
 		if !ok do continue
 
-		behavior.on_update(dt)
+		behavior.on_update(&e, dt, commands)
 	}
 }
 

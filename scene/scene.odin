@@ -1,20 +1,19 @@
 package scene
 
-import "../components"
-import "../entity"
+import "../kec"
 
 next_entity_id : uint = 0
 
 Scene :: struct {
-	entities: [dynamic]entity.Entity,
+	entities: [dynamic]kec.Entity,
 }
 
 scene_new :: proc() -> Scene {
 	return Scene{}
 }
 
-scene_create_entity :: proc(scene: ^Scene, bundle: components.ComponentBundle) {
-	new_entity := entity.Entity {
+scene_create_entity :: proc(scene: ^Scene, bundle: kec.ComponentBundle) {
+	new_entity := kec.Entity {
 		next_entity_id,
 		bundle.transform,
 		bundle.shape,

@@ -1,11 +1,15 @@
 package kutils
 
+import rl "vendor:raylib"
+
 Color :: struct {
 	r: u8,
 	g: u8,
 	b: u8,
 	a: u8,
 }
+
+KeyboardKey :: rl.KeyboardKey
 
 COLOR_RED :: Color{255, 0, 0, 255}
 COLOR_GREEN :: Color{0, 255, 0, 255}

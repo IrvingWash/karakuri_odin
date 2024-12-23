@@ -1,4 +1,4 @@
-package components
+package kec
 
 import "../kmath"
 import "../kutils"
