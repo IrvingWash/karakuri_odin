@@ -1,9 +1,9 @@
 package kgame
 
+import "../kec"
 import "../kutils"
 import "../kwindow"
 import "../scene"
-import "../kec"
 
 Game :: struct {
 	title:    string,
@@ -44,9 +44,7 @@ game_add_entity :: proc(game: ^Game, bundle: kec.ComponentBundle) {
 update :: proc(game: Game) {
 	dt := kwindow.get_delta_time() * 10
 
-	commands := kec.Commands{
-		kwindow.is_key_down
-	}
+	commands := kec.Commands{kwindow.is_key_down}
 
 	for &e in game.scene.entities {
 		behavior, ok := e.behavior_component.?

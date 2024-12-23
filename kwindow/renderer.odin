@@ -32,7 +32,7 @@ draw_rectangle :: proc(
 		i32(position.y),
 		i32(size.x),
 		i32(size.y),
-		color_to_rl(color)
+		color_to_rl(color),
 	)
 }
 

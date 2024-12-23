@@ -27,27 +27,23 @@ main :: proc() {
 speed :: 50
 on_start: kec.OnStart : proc() {}
 
-on_update: kec.OnUpdate : proc(
-    entity: ^kec.Entity,
-	dt: f64,
-    commands: kec.Commands,
-) {
-    using commands
+on_update: kec.OnUpdate : proc(entity: ^kec.Entity, dt: f64, commands: kec.Commands) {
+	using commands
 
-    disposition := speed * dt
+	disposition := speed * dt
 
-    if is_key_down(kutils.KeyboardKey.W) {
-        entity.transform_component.position.y -= disposition
-    }
-    if is_key_down(kutils.KeyboardKey.S) {
-        entity.transform_component.position.y += disposition
-    }
-    if is_key_down(kutils.KeyboardKey.A) {
-        entity.transform_component.position.x -= disposition
-    }
-    if is_key_down(kutils.KeyboardKey.D) {
-        entity.transform_component.position.x += disposition
-    }
+	if is_key_down(kutils.KeyboardKey.W) {
+		entity.transform_component.position.y -= disposition
+	}
+	if is_key_down(kutils.KeyboardKey.S) {
+		entity.transform_component.position.y += disposition
+	}
+	if is_key_down(kutils.KeyboardKey.A) {
+		entity.transform_component.position.x -= disposition
+	}
+	if is_key_down(kutils.KeyboardKey.D) {
+		entity.transform_component.position.x += disposition
+	}
 }
 
 on_destroy: kec.OnDestroy : proc() {}
