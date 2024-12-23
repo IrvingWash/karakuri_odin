@@ -9,8 +9,6 @@ Color :: struct {
 	a: u8,
 }
 
-KeyboardKey :: rl.KeyboardKey
-
 COLOR_RED :: Color{255, 0, 0, 255}
 COLOR_GREEN :: Color{0, 255, 0, 255}
 COLOR_BLUE :: Color{0, 0, 255, 255}

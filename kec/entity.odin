@@ -1,7 +1,5 @@
 package kec
 
-next_id: uint
-
 Entity :: struct {
 	id:                  uint,
 	transform_component: TransformComponent,
